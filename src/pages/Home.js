@@ -5,11 +5,13 @@ const Home = () => {
     return (
         <div style={styles.container}>
             <header style={styles.header}>
-                <h1 style={styles.title}>Welcome to the 3D Model Viewer</h1>
-                <p style={styles.subtitle}>Explore the amazing 3D car model below</p>
+                <h1 style={styles.title}>Auswirkungen der Formel 1 auf die Umwelt</h1>
+                <p style={styles.subtitle}>Autoren: Aaron, Eleni, Jonas</p>
             </header>
             <div style={styles.modelWrapper}>
-                <ModelComponent />
+                <div style={styles.canvasContainer}>
+                    <ModelComponent />
+                </div>
             </div>
         </div>
     );
@@ -18,13 +20,14 @@ const Home = () => {
 const styles = {
     container: {
         display: 'flex',
-        flexDirection: 'column', // Anordnung in einer Spalte
-        justifyContent: 'flex-start', // Elemente von oben nach unten anordnen
-        alignItems: 'center',
-        height: '100vh',
-        backgroundColor: '#f0f4f8', // Sanfter Hintergrund für einen modernen Look
+        flexDirection: 'column',
+        justifyContent: 'center', // Zentriere die Seite vertikal
+        alignItems: 'center', // Zentriere die Seite horizontal
+        height: '100vh', // Volle Höhe für die gesamte Seite
+        backgroundColor: '#f0f4f8', // Sanfter Hintergrund für eine moderne Darstellung
         fontFamily: '"Segoe UI", Tahoma, Geneva, Verdana, sans-serif', // Moderne Schriftart
         color: '#333', // Textfarbe
+        overflow: 'hidden', // Verhindert, dass Elemente aus dem Viewport ragen
     },
     header: {
         textAlign: 'center',
@@ -42,15 +45,22 @@ const styles = {
     },
     modelWrapper: {
         width: '80%',
-        height: '60%', // Höhe angepasst, um Platz für Header zu schaffen
+        height: '70vh', // Höhe für das ModelComponent-Container
         display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.1)', // Leichter Schatten für einen modernen Effekt
-        backgroundColor: 'white', // Weißer Hintergrund hinter dem ModelComponent
-        borderRadius: '15px', // Abgerundete Ecken für ein modernes Design
+        justifyContent: 'center', // Zentriere das Canvas horizontal
+        alignItems: 'center', // Zentriere das Canvas vertikal
+        boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.1)', // Schatten für moderne Optik
+        backgroundColor: 'white', // Weißer Hintergrund für das ModelComponent
+        borderRadius: '15px', // Abgerundete Ecken
         padding: '20px', // Innenabstand um das ModelComponent
-        marginTop: '40px', // Abstand nach oben, um Titel und Modell zu trennen
+        position: 'relative', // Verhindert, dass das Canvas den Container verlässt
+        overflow: 'hidden', // Begrenze das Canvas auf den Containerbereich
+    },
+    canvasContainer: {
+        width: '100%', // Fülle den gesamten Platz im Wrapper aus
+        height: '100%', // Fülle die gesamte Höhe im Wrapper aus
+        position: 'relative',
+        overflow: 'hidden', // Verhindert, dass das Canvas herausragt
     },
 };
 

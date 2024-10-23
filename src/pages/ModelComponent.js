@@ -108,8 +108,8 @@ const ModelComponent = () => {
         <div style={{height: '100vh', width: '99%'}}> {/* Volle Höhe und Breite */}
             <Canvas
                 style={{
-                    height: '70%',
-                    width:  '70%',
+                    height: '100%',
+                    width:  '100%',
                     border: '2px solid black',
                     backgroundColor: '#202020',
                 }}
