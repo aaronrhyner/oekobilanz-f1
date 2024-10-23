@@ -1,11 +1,17 @@
 import React from 'react';
 import BrowserRouter from "./components/Router";
+import ModelComponent from "./pages/ModelComponent";
 
 
 // App Component with Routing
 const App = () => {
     return (
-        <BrowserRouter></BrowserRouter>
+        <div>
+            <BrowserRouter></BrowserRouter>
+            <div style={{height: '100vh', width: 'auto'}}>
+                <ModelComponent/>
+            </div>
+        </div>
     );
 };
 
