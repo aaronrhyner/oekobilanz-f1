@@ -1,22 +1,6 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import {BrowserRouter as Router, Link, Route, Routes} from "react-router-dom";
+import React from "react";
 
-// Home Component
-const Home = () => {
-    return <h2>Home Page</h2>;
-};
-
-// About Component
-const About = () => {
-    return <h2>About Page</h2>;
-};
-
-// Contact Component
-const Contact = () => {
-    return <h2>Contact Page</h2>;
-};
-
-// App Component with Routing
 const App = () => {
     return (
         <Router>
@@ -44,5 +28,3 @@ const App = () => {
         </Router>
     );
 };
-
-export default App;
