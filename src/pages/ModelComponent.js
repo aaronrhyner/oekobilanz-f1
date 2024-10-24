@@ -1,12 +1,13 @@
 // ModelComponent.js
-import React, { useEffect } from 'react';
-import { Canvas } from '@react-three/fiber';
-import { OrbitControls, useGLTF } from '@react-three/drei';
-import { useNavigate } from 'react-router-dom';
+import React, {useEffect} from 'react';
+import {Canvas} from '@react-three/fiber';
+import {OrbitControls, useGLTF} from '@react-three/drei';
+import {useNavigate} from 'react-router-dom';
 import * as THREE from "three";
+import { Text } from '@react-three/drei';
 
 const Model = () => {
-    const { scene, nodes } = useGLTF('/mclaren_f1_2022.glb');
+    const {scene, nodes} = useGLTF('/mclaren_f1_2022.glb');
     const navigate = useNavigate();  // Für die Navigation bei Klick
 
     useEffect(() => {
@@ -17,7 +18,7 @@ const Model = () => {
     // Falls das Modell keine Materialien hat, setze ein Standardmaterial
     scene.traverse((child) => {
         if (child.isMesh && !child.material) {
-            child.material = new THREE.MeshStandardMaterial({ color: 'orange' });
+            child.material = new THREE.MeshStandardMaterial({color: 'orange'});
         }
     });
 
@@ -41,59 +42,72 @@ const Model = () => {
                         <mesh geometry={nodes.Object_35.geometry}>
                             <meshStandardMaterial
                                 color="orange"
-                                transparent={true}  // Ermöglicht Transparenz
-                                opacity={0}       // Setzt die Durchsichtigkeit (1 = vollständig sichtbar, 0 = vollständig unsichtbar)
-                                depthWrite={false}  // Optional: Kann helfen, transparente Objekte korrekt zu rendern
+                                transparent={true}
+                                opacity={0}
+                                depthWrite={false}
                             />
+                            {/*   <Text
+                                position={[nodes.Object_35.position.x , nodes.Object_35.position.y + 3, nodes.Object_35.position.z]}
+                                fontSize={0.1}
+                                color="white"
+                                anchorX="center"
+                                anchorY="middle"
+                            >
+                                Rad 35
+                            </Text>*/}
                         </mesh>
                     )}
                     {nodes?.Object_39 && (
                         <mesh geometry={nodes.Object_39.geometry}>
                             <meshStandardMaterial
                                 color="orange"
-                                transparent={true}  // Ermöglicht Transparenz
-                                opacity={0}       // Setzt die Durchsichtigkeit (1 = vollständig sichtbar, 0 = vollständig unsichtbar)
-                                depthWrite={false}  // Optional: Kann helfen, transparente Objekte korrekt zu rendern
+                                transparent={true}
+                                opacity={0}
+                                depthWrite={false}
                             />
+
                         </mesh>
                     )}
                     {nodes?.Object_40 && (
                         <mesh geometry={nodes.Object_40.geometry}>
                             <meshStandardMaterial
                                 color="orange"
-                                transparent={true}  // Ermöglicht Transparenz
-                                opacity={0}       // Setzt die Durchsichtigkeit (1 = vollständig sichtbar, 0 = vollständig unsichtbar)
-                                depthWrite={false}  // Optional: Kann helfen, transparente Objekte korrekt zu rendern
+                                transparent={true}
+                                opacity={0}
+                                depthWrite={false}
                             />
+
                         </mesh>
                     )}
                     {nodes?.Object_41 && (
                         <mesh geometry={nodes.Object_41.geometry}>
                             <meshStandardMaterial
                                 color="orange"
-                                transparent={true}  // Ermöglicht Transparenz
-                                opacity={0}       // Setzt die Durchsichtigkeit (1 = vollständig sichtbar, 0 = vollständig unsichtbar)
-                                depthWrite={false}  // Optional: Kann helfen, transparente Objekte korrekt zu rendern
+                                transparent={true}
+                                opacity={0}
+                                depthWrite={false}
                             />
+
                         </mesh>
                     )}
                     {nodes?.Object_43 && (
                         <mesh geometry={nodes.Object_43.geometry}>
                             <meshStandardMaterial
                                 color="orange"
-                                transparent={true}  // Ermöglicht Transparenz
-                                opacity={0}       // Setzt die Durchsichtigkeit (1 = vollständig sichtbar, 0 = vollständig unsichtbar)
-                                depthWrite={false}  // Optional: Kann helfen, transparente Objekte korrekt zu rendern
+                                transparent={true}
+                                opacity={0}
+                                depthWrite={false}
                             />
+
                         </mesh>
                     )}
                     {nodes?.Object_44 && (
                         <mesh geometry={nodes.Object_44.geometry}>
                             <meshStandardMaterial
                                 color="orange"
-                                transparent={true}  // Ermöglicht Transparenz
-                                opacity={0}       // Setzt die Durchsichtigkeit (1 = vollständig sichtbar, 0 = vollständig unsichtbar)
-                                depthWrite={false}  // Optional: Kann helfen, transparente Objekte korrekt zu rendern
+                                transparent={true}
+                                opacity={0}
+                                depthWrite={false}
                             />
                         </mesh>
                     )}
@@ -109,7 +123,7 @@ const ModelComponent = () => {
             <Canvas
                 style={{
                     height: '100%',
-                    width:  '100%',
+                    width: '100%',
                     border: '2px solid black',
                     backgroundColor: '#202020',
                 }}
