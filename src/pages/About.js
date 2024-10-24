@@ -1,7 +1,12 @@
 import React from 'react';
 
 const About = () => {
-    return <h2>About Page</h2>
+    return (
+        <div>
+            <h2>Du hast die Räder angeklickt</h2>
+            <a href="/">Zurück</a>
+        </div>
+    );
 };
 
 export default About;
