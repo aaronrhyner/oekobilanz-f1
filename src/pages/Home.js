@@ -24,9 +24,9 @@ const styles = {
         justifyContent: 'center', // Zentriere die Seite vertikal
         alignItems: 'center', // Zentriere die Seite horizontal
         height: '100vh', // Volle Höhe für die gesamte Seite
-        backgroundColor: '#f0f4f8', // Sanfter Hintergrund für eine moderne Darstellung
+        backgroundColor: '#fefaf0', // Sanfter Hintergrund für eine moderne Darstellung
         fontFamily: '"Segoe UI", Tahoma, Geneva, Verdana, sans-serif', // Moderne Schriftart
-        color: '#333', // Textfarbe
+        color: '#fefaf0', // Textfarbe
         overflow: 'hidden', // Verhindert, dass Elemente aus dem Viewport ragen
     },
     header: {
@@ -36,7 +36,7 @@ const styles = {
     title: {
         fontSize: '2.5rem',
         margin: '0',
-        color: '#007bff', // Moderne, ansprechende Farbe für den Titel
+        color: '#ff1e00', // Moderne, ansprechende Farbe für den Titel
     },
     subtitle: {
         fontSize: '1.2rem',
