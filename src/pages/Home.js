@@ -1,9 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import ModelComponent from "./ModelComponent";
 
 const Home = () => {
+    const [isMenuOpen, setMenuOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setMenuOpen(!isMenuOpen);
+    };
+
     return (
-        <div style={styles.container}>
+        <div style={{ ...styles.container, paddingTop: isMenuOpen ? '200px' : '0' }}>
+            {isMenuOpen && (
+                <nav style={styles.menu}>
+                    <ul style={styles.menuList}>
+                        <li style={styles.menuItem}><a href="#home" style={styles.menuLink}>Home</a></li>
+                        <li style={styles.menuItem}><a href="#environment" style={styles.menuLink}>Environment Impact</a></li>
+                        <li style={styles.menuItem}><a href="#authors" style={styles.menuLink}>Authors</a></li>
+                        {/* Add more menu items as needed */}
+                    </ul>
+                </nav>
+            )}
+            <button style={styles.menuButton} onClick={toggleMenu}>
+                ☰ {/* Menu icon */}
+            </button>
+
             <header style={styles.header}>
                 <h1 style={styles.title}>Auswirkungen der Formel 1 auf die Umwelt</h1>
                 <p style={styles.subtitle}>Autoren: Aaron, Eleni, Jonas</p>
@@ -21,22 +41,60 @@ const styles = {
     container: {
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'center', // Zentriere die Seite vertikal
-        alignItems: 'center', // Zentriere die Seite horizontal
-        height: '100vh', // Volle Höhe für die gesamte Seite
-        backgroundColor: '#f0f4f8', // Sanfter Hintergrund für eine moderne Darstellung
-        fontFamily: '"Segoe UI", Tahoma, Geneva, Verdana, sans-serif', // Moderne Schriftart
-        color: '#333', // Textfarbe
-        overflow: 'hidden', // Verhindert, dass Elemente aus dem Viewport ragen
+        alignItems: 'center',
+        height: '100vh',
+        backgroundColor: '#f0f4f8',
+        fontFamily: '"Segoe UI", Tahoma, Geneva, Verdana, sans-serif',
+        color: '#333',
+        overflow: 'hidden',
+        transition: 'padding-top 0.3s', // Smooth transition for content shift
+    },
+    menuButton: {
+        position: 'fixed',
+        top: '20px',
+        left: '20px',
+        fontSize: '1.5rem',
+        padding: '10px',
+        backgroundColor: '#007bff',
+        color: 'white',
+        border: 'none',
+        borderRadius: '5px',
+        cursor: 'pointer',
+        boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)',
+        zIndex: '1001', // Ensure the button stays above other elements
+    },
+    menu: {
+        left: '0',
+        width: '100%',
+        backgroundColor: '#007bff',
+        color: 'white',
+        boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.2)',
+        padding: '20px',
+        textAlign: 'left',
+    },
+    menuList: {
+        listStyle: 'none',
+        padding: '0',
+        margin: '0',
+    },
+    menuItem: {
+        padding: '10px 0',
+        fontSize: '1.2rem',
+        borderBottom: '1px solid rgba(255, 255, 255, 0.3)',
+    },
+    menuLink: {
+        color: 'white',
+        textDecoration: 'none',
+        cursor: 'pointer',
     },
     header: {
         textAlign: 'center',
-        marginBottom: '20px', // Abstand zwischen Titel und ModelComponent
+        marginBottom: '20px',
     },
     title: {
         fontSize: '2.5rem',
         margin: '0',
-        color: '#007bff', // Moderne, ansprechende Farbe für den Titel
+        color: '#007bff',
     },
     subtitle: {
         fontSize: '1.2rem',
@@ -45,22 +103,22 @@ const styles = {
     },
     modelWrapper: {
         width: '80%',
-        height: '70vh', // Höhe für das ModelComponent-Container
+        height: '70vh',
         display: 'flex',
-        justifyContent: 'center', // Zentriere das Canvas horizontal
-        alignItems: 'center', // Zentriere das Canvas vertikal
-        boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.1)', // Schatten für moderne Optik
-        backgroundColor: 'white', // Weißer Hintergrund für das ModelComponent
-        borderRadius: '15px', // Abgerundete Ecken
-        padding: '20px', // Innenabstand um das ModelComponent
-        position: 'relative', // Verhindert, dass das Canvas den Container verlässt
-        overflow: 'hidden', // Begrenze das Canvas auf den Containerbereich
+        justifyContent: 'center',
+        alignItems: 'center',
+        boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.1)',
+        backgroundColor: 'white',
+        borderRadius: '15px',
+        padding: '20px',
+        position: 'relative',
+        overflow: 'hidden',
     },
     canvasContainer: {
-        width: '100%', // Fülle den gesamten Platz im Wrapper aus
-        height: '100%', // Fülle die gesamte Höhe im Wrapper aus
+        width: '100%',
+        height: '100%',
         position: 'relative',
-        overflow: 'hidden', // Verhindert, dass das Canvas herausragt
+        overflow: 'hidden',
     },
 };
 
