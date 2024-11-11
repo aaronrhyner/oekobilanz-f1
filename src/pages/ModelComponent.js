@@ -4,7 +4,6 @@ import {Canvas} from '@react-three/fiber';
 import {OrbitControls, useGLTF} from '@react-three/drei';
 import {useNavigate} from 'react-router-dom';
 import * as THREE from "three";
-import { Text } from '@react-three/drei';
 
 const Model = () => {
     const {scene, nodes} = useGLTF('/mclaren_f1_2022.glb');
