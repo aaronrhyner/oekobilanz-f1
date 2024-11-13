@@ -1,7 +1,7 @@
 import React from 'react';
 import Formula1FlashCard from "./Formula1FlashCard";
 
-const About = () => {
+const Quiz = () => {
     return (
         <div>
             <h2>Du hast die Räder angeklickt</h2>
@@ -12,4 +12,4 @@ const About = () => {
     );
 };
 
-export default About;
+export default Quiz;

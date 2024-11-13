@@ -1,8 +1,8 @@
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import React from "react";
 import Home from "../pages/Home";
-import About from "../pages/About";
-import ModelComponent from "../pages/ModelComponent";
+import Quiz from "../pages/Quiz";
+import ModelComponent from "./ModelComponent";
 
 
 const MyBrowserRouter = () => {
@@ -12,7 +12,7 @@ const MyBrowserRouter = () => {
 
                 <Routes>
                     <Route path="/" element={<Home />} />
-                    <Route path="/about" element={<About />} />
+                    <Route path="/about" element={<Quiz />} />
                     <Route path="/Car" element={<ModelComponent />} />
                 </Routes>
             </div>

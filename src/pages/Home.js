@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ModelComponent from "./ModelComponent";
+import ModelComponent from "../components/ModelComponent";
 
 const Home = () => {
     const [isMenuOpen, setMenuOpen] = useState(false);
