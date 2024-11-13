@@ -9,14 +9,13 @@ const Home = () => {
     };
 
     return (
-        <div style={{ ...styles.container, paddingTop: isMenuOpen ? '200px' : '0' }}>
+        <div style={{ ...styles.container}}>
             {isMenuOpen && (
                 <nav style={styles.menu}>
                     <ul style={styles.menuList}>
                         <li style={styles.menuItem}><a href="#home" style={styles.menuLink}>Home</a></li>
                         <li style={styles.menuItem}><a href="#environment" style={styles.menuLink}>Environment Impact</a></li>
                         <li style={styles.menuItem}><a href="#authors" style={styles.menuLink}>Authors</a></li>
-                        {/* Add more menu items as needed */}
                     </ul>
                 </nav>
             )}
@@ -55,7 +54,7 @@ const styles = {
         left: '20px',
         fontSize: '1.5rem',
         padding: '10px',
-        backgroundColor: '#007bff',
+        backgroundColor: '#4b7543',
         color: 'white',
         border: 'none',
         borderRadius: '5px',
@@ -66,7 +65,7 @@ const styles = {
     menu: {
         left: '0',
         width: '100%',
-        backgroundColor: '#007bff',
+        backgroundColor: '#4b7543',
         color: 'white',
         boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.2)',
         padding: '20px',
@@ -79,6 +78,7 @@ const styles = {
     },
     menuItem: {
         padding: '10px 0',
+        marginLeft: '100px',
         fontSize: '1.2rem',
         borderBottom: '1px solid rgba(255, 255, 255, 0.3)',
     },
@@ -90,20 +90,21 @@ const styles = {
     header: {
         textAlign: 'center',
         marginBottom: '20px',
+        marginTop: '50px',
     },
     title: {
         fontSize: '2.5rem',
         margin: '0',
-        color: '#007bff',
+        color: '#FF1E00',
     },
     subtitle: {
         fontSize: '1.2rem',
         marginTop: '10px',
-        color: '#6c757d',
+        color: '#202020',
     },
     modelWrapper: {
         width: '80%',
-        height: '70vh',
+        height: '50vh',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
