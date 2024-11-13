@@ -22,10 +22,11 @@ const CardInner = styled('div')(({ theme, flipped }) => ({
     transformStyle: 'preserve-3d',
     transition: 'transform 0.6s',
     transform: flipped ? 'rotateY(180deg)' : 'none',
-    backgroundColor: theme.palette.background.paper,
+   // backgroundColor: theme.palette.background.paper,
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: '#8d1304'
 }));
 
 const CardFront = styled(CardContent)({
@@ -51,14 +52,14 @@ const Flashcard = ({ question, answer }) => {
             <CardInner flipped={flipped}>
                 <CardFront>
                     <Typography variant="h6" component="div" style={{width: '100%'}}>
-                        <QuestionMarkIcon style={{color: 'blue'}}/>
+                        <QuestionMarkIcon style={{color: '#FEFAE0'}}/>
                         <br/>
                         {question}
                     </Typography>
                 </CardFront>
                 <CardBack>
                     <Typography variant="h6" component="div" style={{transform: 'rotateY(180deg)'}}>
-                        <LightbulbIcon style={{ color: 'orange' }} />
+                        <LightbulbIcon style={{ color: '#FEFAE0' }} />
                         <br/>
                         {answer}
                     </Typography>
@@ -77,7 +78,8 @@ const Formula1Flashcards = () => {
     ];
 
     return (
-        <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
+        <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap',
+        }}>
             {cards.map((card, index) => (
                 <Flashcard key={index} question={card.question} answer={card.answer} />
             ))}

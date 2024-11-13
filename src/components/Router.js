@@ -9,10 +9,9 @@ const MyBrowserRouter = () => {
     return (
         <Router>
             <div>
-
                 <Routes>
                     <Route path="/" element={<Home />} />
-                    <Route path="/about" element={<Quiz />} />
+                    <Route path="/quiz" element={<Quiz />} />
                     <Route path="/Car" element={<ModelComponent />} />
                 </Routes>
             </div>
