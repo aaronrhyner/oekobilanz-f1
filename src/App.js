@@ -13,7 +13,7 @@ const App = () => {
         {isMenuOpen && (<nav style={styles.menu}>
             <ul style={styles.menuList}>
                 <li style={styles.menuItem}><a href="/" style={styles.menuLink}>Home</a></li>
-                <li style={styles.menuItem}><a href="/quiz" style={styles.menuLink}>Quiz</a></li>
+                <li style={styles.menuItem}><a href="/flashcards" style={styles.menuLink}>Quiz</a></li>
                 <li style={styles.menuItem}><a href="#authors" style={styles.menuLink}>Authors</a></li>
             </ul>
         </nav>)}

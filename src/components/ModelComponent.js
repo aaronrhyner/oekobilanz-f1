@@ -23,7 +23,7 @@ const Model = () => {
 
     // Klick-Event-Handler für das Rad
     const handleWheelClick = () => {
-        navigate('/about');  // Weiterleitung zur /about-Seite
+        navigate('/flashcards');  // Weiterleitung zur /about-Seite
     };
 
     return (

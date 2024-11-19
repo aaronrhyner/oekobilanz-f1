@@ -11,7 +11,7 @@ const MyBrowserRouter = () => {
             <div>
                 <Routes>
                     <Route path="/" element={<Home />} />
-                    <Route path="/quiz" element={<Quiz />} />
+                    <Route path="/flashcards" element={<Quiz />} />
                     <Route path="/Car" element={<ModelComponent />} />
                 </Routes>
             </div>
