@@ -4,7 +4,6 @@ import {Canvas} from '@react-three/fiber';
 import {OrbitControls, useGLTF} from '@react-three/drei';
 import {useNavigate} from 'react-router-dom';
 import * as THREE from "three";
-import { Text } from '@react-three/drei';
 
 const Model = () => {
     const {scene, nodes} = useGLTF('/mclaren_f1_2022.glb');
@@ -23,13 +22,15 @@ const Model = () => {
     });
 
     // Klick-Event-Handler für das Rad
-    const handleWheelClick = (event) => {
-        navigate('/about');  // Weiterleitung zur /about-Seite
+    const handleWheelClick = () => {
+        navigate('/flashcards');  // Weiterleitung zur /about-Seite
     };
 
     return (
         // Hier wird das Modell rotiert, z.B. um die Y-Achse um -90 Grad, um es richtig zu orientieren
-        <primitive object={scene} rotation={[0, Math.PI / -2, 56.4]}>
+        <primitive object={scene} rotation={[0, Math.PI / -2, 56.4]}
+                   position={[0, 2, 0]}  // Adjust the Y position to move the model higher
+        >
 
             {/* Zugriff auf die Räder und das Klick-Event hinzufügen */}
 
@@ -127,6 +128,7 @@ const ModelComponent = () => {
                     border: '2px solid black',
                     backgroundColor: '#202020',
                 }}
+                camera={{ position: [0, 3, 7] }}  // Increase the Z position for a farther zoom
             >
                 <ambientLight intensity={0.5}/>
                 {/* Helligkeit des Umgebungslichts erhöhen */}
