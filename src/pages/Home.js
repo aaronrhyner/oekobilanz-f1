@@ -39,7 +39,7 @@ const styles = {
     title: {
         fontSize: '2.5rem',
         margin: '0',
-        color: '#FF1E00',
+        color: '#ff1e00', // Moderne, ansprechende Farbe für den Titel
     },
     subtitle: {
         fontSize: '1.2rem',
