@@ -125,8 +125,8 @@ const ModelComponent = () => {
                 style={{
                     height: '100%',
                     width: '100%',
-                    border: '2px solid black',
-                    backgroundColor: '#202020',
+                    //border: '2px solid black',
+                    backgroundColor: '#FFFFFF',
                 }}
                 camera={{ position: [0, 3, 7] }}  // Increase the Z position for a farther zoom
             >
