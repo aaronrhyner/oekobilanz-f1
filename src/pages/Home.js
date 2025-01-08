@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import ModelComponent from "../components/ModelComponent";
 
 const Home = () => {
 
     return (
-        <div style={{ ...styles.container}}>
+        <div style={{...styles.container}}>
 
             <header style={styles.header}>
                 <h1 style={styles.title}>Auswirkungen der Formel 1 auf die Umwelt</h1>
@@ -12,7 +12,7 @@ const Home = () => {
             </header>
             <div style={styles.modelWrapper}>
                 <div style={styles.canvasContainer}>
-                    <ModelComponent />
+                    <ModelComponent/>
                 </div>
             </div>
         </div>
