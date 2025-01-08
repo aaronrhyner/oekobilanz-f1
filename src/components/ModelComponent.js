@@ -128,7 +128,7 @@ const ModelComponent = () => {
                     //border: '2px solid black',
                     backgroundColor: '#FFFFFF',
                 }}
-                camera={{ position: [0, 3, 7] }}  // Increase the Z position for a farther zoom
+                camera={{position: [0, 3, 7]}}  // Increase the Z position for a farther zoom
             >
                 <ambientLight intensity={0.5}/>
                 {/* Helligkeit des Umgebungslichts erhöhen */}
