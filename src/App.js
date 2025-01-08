@@ -9,7 +9,13 @@ const App = () => {
         setMenuOpen(!isMenuOpen);
     };
 
-    return (<div>
+    const handleScroll = () => {
+        isMenuOpen &&
+        setMenuOpen(false)
+    };
+
+
+    return (<div className={"body"} onScroll={handleScroll}>
         {isMenuOpen && (<nav style={styles.menu}>
             <ul style={styles.menuList}>
                 <li style={styles.menuItem}><a href="/" style={styles.menuLink}>Home</a></li>
@@ -25,27 +31,32 @@ const App = () => {
 };
 
 const styles = {
+    body: {},
     menuButton: {
         position: 'fixed',
         top: '20px',
         left: '20px',
         fontSize: '1.5rem',
         padding: '10px',
-        backgroundColor: '#4b7543',
+        backgroundColor: '#FF1e00',
         color: 'white',
         border: 'none',
         borderRadius: '5px',
         cursor: 'pointer',
         boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)',
         zIndex: '1001', // Ensure the button stays above other elements
-    }, menu: {
+    },
+
+    menu: {
         left: '0',
-        width: '100%',
-        backgroundColor: '#4b7543',
+        width: 'auto',
+        backgroundColor: '#FF1e00',
         color: 'white',
         boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.2)',
         padding: '20px',
         textAlign: 'left',
+        overflowX: 'hidden',
+        overflowY: 'auto',
     }, menuList: {
         listStyle: 'none', padding: '0', margin: '0',
     }, menuItem: {

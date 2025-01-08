@@ -8,7 +8,7 @@ const Home = () => {
 
             <header style={styles.header}>
                 <h1 style={styles.title}>Auswirkungen der Formel 1 auf die Umwelt</h1>
-                <p style={styles.subtitle}>Autoren: Aaron, Eleni, Jonas</p>
+                { /*p style={styles.subtitle}>Autoren: Aaron, Eleni, Jonas</-p>*/}
             </header>
             <div style={styles.modelWrapper}>
                 <div style={styles.canvasContainer}>
@@ -34,7 +34,8 @@ const styles = {
     header: {
         textAlign: 'center',
         marginBottom: '20px',
-        marginTop: '50px',
+        marginTop: '100px',
+        marginLeft: '50px'
     },
     title: {
         fontSize: '2.5rem',
