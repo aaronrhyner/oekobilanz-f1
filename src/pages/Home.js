@@ -1,19 +1,24 @@
 import React from "react";
 import ModelComponent from "../components/ModelComponent";
+import TextPreview from "../components/TextPreview";
+import textsData from "../data/text.json";
 
 const Home = () => {
-
     return (
-        <div style={{...styles.container}}>
-
+        <div style={{ ...styles.container }}>
             <header style={styles.header}>
                 <h1 style={styles.title}>Auswirkungen der Formel 1 auf die Umwelt</h1>
-                { /*p style={styles.subtitle}>Autoren: Aaron, Eleni, Jonas</-p>*/}
+                {/*<p style={styles.subtitle}>Autoren: Aaron, Eleni, Jonas</p>*/}
             </header>
             <div style={styles.modelWrapper}>
                 <div style={styles.canvasContainer}>
-                    <ModelComponent/>
+                    <ModelComponent />
                 </div>
+            </div>
+            <div style={styles.textContainer}>
+                {textsData.map((text, index) => (
+                    <TextPreview key={index} text={text.content} />
+                ))}
             </div>
         </div>
     );
@@ -28,14 +33,13 @@ const styles = {
         backgroundColor: '#f0f4f8',
         fontFamily: '"Segoe UI", Tahoma, Geneva, Verdana, sans-serif',
         color: '#333',
-        overflow: 'hidden',
+        overflow: 'auto', // Enable scrolling
         transition: 'padding-top 0.3s', // Smooth transition for content shift
     },
     header: {
         textAlign: 'center',
         marginBottom: '20px',
-        marginTop: '100px',
-        marginLeft: '50px'
+        marginTop: '20px',
     },
     title: {
         fontSize: '2.5rem',
@@ -49,7 +53,7 @@ const styles = {
     },
     modelWrapper: {
         width: '80%',
-        height: '50vh',
+        height: '50vh', // Adjust the height of the ModelComponent
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
@@ -58,13 +62,17 @@ const styles = {
         borderRadius: '15px',
         padding: '20px',
         position: 'relative',
-        overflow: 'hidden',
+        //overflow: 'hidden',
     },
     canvasContainer: {
         width: '100%',
         height: '100%',
         position: 'relative',
         overflow: 'hidden',
+    },
+    textContainer: {
+        width: '80%',
+        marginTop: '20px',
     },
 };
 
