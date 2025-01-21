@@ -1,12 +1,12 @@
-import React, {useEffect, useState} from 'react';
-import {Canvas} from '@react-three/fiber';
-import {OrbitControls, useGLTF} from '@react-three/drei';
-import {useNavigate} from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Canvas } from '@react-three/fiber';
+import { OrbitControls, useGLTF } from '@react-three/drei';
+import { useNavigate } from 'react-router-dom';
 import * as THREE from "three";
-import {Button, Dialog, DialogActions, DialogContent, DialogTitle} from '@mui/material';
+import { Dialog, DialogTitle, DialogContent, DialogActions, Button } from '@mui/material';
 
-const Model = ({onWheelClick}) => {
-    const {scene, nodes} = useGLTF('/mclaren_f1_2022.glb');
+const Model = ({ onWheelClick }) => {
+    const { scene, nodes } = useGLTF('/mclaren_f1_2022.glb');
     const navigate = useNavigate();  // For navigation on click
 
     useEffect(() => {
@@ -17,7 +17,7 @@ const Model = ({onWheelClick}) => {
     // Set a default material if the model has no materials
     scene.traverse((child) => {
         if (child.isMesh && !child.material) {
-            child.material = new THREE.MeshStandardMaterial({color: 'orange'});
+            child.material = new THREE.MeshStandardMaterial({ color: 'orange' });
         }
     });
 
@@ -27,32 +27,32 @@ const Model = ({onWheelClick}) => {
                 <group rotation={[Math.PI / -2, 0, 0]} onClick={onWheelClick}>
                     {nodes?.Object_35 && (
                         <mesh geometry={nodes.Object_35.geometry}>
-                            <meshStandardMaterial color="orange" transparent={true} opacity={0} depthWrite={false}/>
+                            <meshStandardMaterial color="orange" transparent={true} opacity={0} depthWrite={false} />
                         </mesh>
                     )}
                     {nodes?.Object_39 && (
                         <mesh geometry={nodes.Object_39.geometry}>
-                            <meshStandardMaterial color="orange" transparent={true} opacity={0} depthWrite={false}/>
+                            <meshStandardMaterial color="orange" transparent={true} opacity={0} depthWrite={false} />
                         </mesh>
                     )}
                     {nodes?.Object_40 && (
                         <mesh geometry={nodes.Object_40.geometry}>
-                            <meshStandardMaterial color="orange" transparent={true} opacity={0} depthWrite={false}/>
+                            <meshStandardMaterial color="orange" transparent={true} opacity={0} depthWrite={false} />
                         </mesh>
                     )}
                     {nodes?.Object_41 && (
                         <mesh geometry={nodes.Object_41.geometry}>
-                            <meshStandardMaterial color="orange" transparent={true} opacity={0} depthWrite={false}/>
+                            <meshStandardMaterial color="orange" transparent={true} opacity={0} depthWrite={false} />
                         </mesh>
                     )}
                     {nodes?.Object_43 && (
                         <mesh geometry={nodes.Object_43.geometry}>
-                            <meshStandardMaterial color="orange" transparent={true} opacity={0} depthWrite={false}/>
+                            <meshStandardMaterial color="orange" transparent={true} opacity={0} depthWrite={false} />
                         </mesh>
                     )}
                     {nodes?.Object_44 && (
                         <mesh geometry={nodes.Object_44.geometry}>
-                            <meshStandardMaterial color="orange" transparent={true} opacity={0} depthWrite={false}/>
+                            <meshStandardMaterial color="orange" transparent={true} opacity={0} depthWrite={false} />
                         </mesh>
                     )}
                 </group>
@@ -73,20 +73,20 @@ const ModelComponent = () => {
     };
 
     return (
-        <div style={{height: '100vh', width: '99%'}}>
+        <div style={{ height: '100vh', width: '99%' }}>
             <Canvas
                 style={{
                     height: '100%',
                     width: '100%',
                     backgroundColor: '#FFFFFF',
                 }}
-                camera={{position: [0, 3, 7]}}
+                camera={{ position: [0, 3, 7] }}
             >
-                <ambientLight intensity={0.5}/>
-                <pointLight position={[10, 10, 10]} intensity={1}/>
-                <directionalLight position={[5, 5, 5]} intensity={1}/>
-                <Model onWheelClick={handleWheelClick}/>
-                <OrbitControls/>
+                <ambientLight intensity={0.5} />
+                <pointLight position={[10, 10, 10]} intensity={1} />
+                <directionalLight position={[5, 5, 5]} intensity={1} />
+                <Model onWheelClick={handleWheelClick} />
+                <OrbitControls />
             </Canvas>
 
             {/* MUI Dialog */}
@@ -116,7 +116,7 @@ const ModelComponent = () => {
                         }}
                     >
                         Close
-                    </Button> </DialogActions>
+                    </Button>                </DialogActions>
             </Dialog>
         </div>
     );
