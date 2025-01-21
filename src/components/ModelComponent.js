@@ -1,13 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import { Canvas } from '@react-three/fiber';
-import { OrbitControls, useGLTF } from '@react-three/drei';
-import { useNavigate } from 'react-router-dom';
+import React, {useEffect, useState} from 'react';
+import {Canvas} from '@react-three/fiber';
+import {OrbitControls, useGLTF} from '@react-three/drei';
 import * as THREE from "three";
-import { Dialog, DialogTitle, DialogContent, DialogActions, Button } from '@mui/material';
+import {Button, Dialog, DialogActions, DialogContent, DialogTitle} from '@mui/material';
 
 const Model = ({ onWheelClick }) => {
     const { scene, nodes } = useGLTF('/mclaren_f1_2022.glb');
-    const navigate = useNavigate();  // For navigation on click
 
     useEffect(() => {
         // Log nodes to the console for inspection

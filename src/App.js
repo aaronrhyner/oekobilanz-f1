@@ -21,6 +21,7 @@ const App = () => {
                 <li style={styles.menuItem}><a href="/" style={styles.menuLink}>Home</a></li>
                 <li style={styles.menuItem}><a href="/flashcards" style={styles.menuLink}>Flashcards</a></li>
                 <li style={styles.menuItem}><a href="/quiz" style={styles.menuLink}>Quiz</a></li>
+                <li style={styles.menuItem}><a href="/lueckentext" style={styles.menuLink}>Lückentext</a></li>
             </ul>
         </nav>)}
         <button style={styles.menuButton} onClick={toggleMenu}>
