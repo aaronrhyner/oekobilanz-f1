@@ -98,9 +98,11 @@ const ModelComponent = () => {
                     fontWeight: 'bold',
                     padding: '10px 20px',
                     borderRadius: '10px 10px 0 0'
-                }}>Wheel Clicked</DialogTitle>
+                }}>Reifen</DialogTitle>
                 <DialogContent>
-                    <p>You clicked on the wheel!</p>
+                    <p>Pro Rennwochenende werden pro Fahrer 13 Reifensätze à 4 Reifen zur Verfügung gestellt.  Auf 23 Rennwochenenden sind das bereits 23'920 Reifen, welche gebraucht werden. Für die Testfahrten werden pro Team 35 weitere  Reifensätze mitgebracht. Das bedeutet, dass zusätzlich zu den 23'920 Reifen aller Rennen 1'400  Reifen nur fürs Testing abgefahren werden.
+                        Der Reifenhersteller Pirelli,  nimmt die gebrauchten Reifen wieder entgegen und Produziert durch deren Verbrennung Energie für ihre Werke zu erzeugen.
+                    </p>
                 </DialogContent>
                 <DialogActions>
                     <Button
