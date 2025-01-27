@@ -15,7 +15,7 @@ const TextPreview = ({ text }) => {
             <Typography variant="body1" style={{ whiteSpace: 'pre-line' }}>
                 {expanded ? text : `${previewText}...`}
             </Typography>
-            <Button onClick={handleToggle} variant="contained" style={{ marginTop: '10px', backgroundColor: '#8D1304' }}>                {expanded ? 'Show Less' : 'Read More'}
+            <Button onClick={handleToggle} variant="contained" style={{ marginTop: '10px', backgroundColor: '#8D1304' }}>                {expanded ? 'Show Less' : 'Weiterlesen'}
             </Button>
         </div>
     );

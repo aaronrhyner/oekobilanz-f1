@@ -2,6 +2,7 @@ import React from "react";
 import ModelComponent from "../components/ModelComponent";
 import TextPreview from "../components/TextPreview";
 import textsData from "../data/text.json";
+import Footer from "../components/Footer";
 
 const Home = () => {
     return (
@@ -20,6 +21,9 @@ const Home = () => {
                     <TextPreview key={index} text={text.content} />
                 ))}
             </div>
+            <footer>
+                <Footer/>
+            </footer>
         </div>
     );
 };
