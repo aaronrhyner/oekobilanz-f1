@@ -19,9 +19,9 @@ const App = () => {
         {isMenuOpen && (<nav style={styles.menu}>
             <ul style={styles.menuList}>
                 <li style={styles.menuItem}><a href="/" style={styles.menuLink}>Home</a></li>
-                <li style={styles.menuItem}><a href="/flashcards" style={styles.menuLink}>Flashcards</a></li>
-                <li style={styles.menuItem}><a href="/quiz" style={styles.menuLink}>Quiz</a></li>
-                <li style={styles.menuItem}><a href="/lueckentext" style={styles.menuLink}>Lückentext</a></li>
+                <li style={styles.menuItem}><a href="/details/1" style={styles.menuLink}>Streckenbetrieb</a></li>
+                <li style={styles.menuItem}><a href="/details/2" style={styles.menuLink}>NetZero 2030</a></li>
+                <li style={styles.menuItem}><a href="/details/3" style={styles.menuLink}>Logistik</a></li>
             </ul>
         </nav>)}
         <button style={styles.menuButton} onClick={toggleMenu}>
