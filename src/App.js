@@ -14,7 +14,6 @@ const App = () => {
         setMenuOpen(false)
     };
 
-
     return (<div className={"body"} onScroll={handleScroll}>
         {isMenuOpen && (<nav style={styles.menu}>
             <ul style={styles.menuList}>
@@ -34,7 +33,7 @@ const App = () => {
 const styles = {
     body: {},
     menuButton: {
-        position: 'fixed',
+        position: 'absolute',
         top: '20px',
         left: '20px',
         fontSize: '1.5rem',
@@ -49,8 +48,9 @@ const styles = {
     },
 
     menu: {
+        position: 'absolute',
         left: '0',
-        width: 'auto',
+        width: '100%',
         backgroundColor: '#FF1e00',
         color: 'white',
         boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.2)',

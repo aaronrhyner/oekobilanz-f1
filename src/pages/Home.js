@@ -26,8 +26,24 @@ const Home = () => {
 
                 <div style={styles.imageTextContainer}>
                     <Typography variant="body1" style={styles.imageText}>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed
-                        cursus ante dapibus diam.
+                        Gesamthaft wurden in der 2023 Saison der Formel 1 <strong>223'031 Tonnen</strong> Co2 in die
+                        Atmosphäre ausgestossen.
+                        <li>
+                           <strong> 109'285.2 Tonnen</strong> Co2 stammen von der Logistik der Formel 1.
+                        </li>
+                        <li>
+                            <strong>64'678,99 Tonnen </strong>Co2 stammen von den Reisen der Mitarbeitern.
+                        </li>
+                        <li>
+                            <strong>26'763,72 Tonnen </strong>Co2 werden durch den Streckenbetrieb freigesetzt.
+                        </li>
+                        <li>
+                            <strong> 22'303,1 Tonnen </strong>Co2 kommen von den Werken und Büros der Formel 1 Teams.
+                        </li>
+                        <li>
+                            <strong> 1.99 Tonnen </strong>Co2 stammen effektiv von den Rennautos.
+                        </li>
+
                     </Typography>
                     <img
                         src="/pieChartEmission.png"
@@ -124,7 +140,7 @@ const styles = {
         marginRight: "20px",
     },
     image: {
-        width: "50%",
+        width: "45%",
         height: "auto",
     },
     summaryText: {
