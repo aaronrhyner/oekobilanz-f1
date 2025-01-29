@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import {
     Button,
     FormControl,
@@ -17,19 +17,29 @@ const Quiz = () => {
     const [answers, setAnswers] = useState({});
     const questions = [
         {
-            question: "Who won the 2021 Formula 1 World Championship?",
-            options: ["Lewis Hamilton", "Max Verstappen", "Sebastian Vettel", "Charles Leclerc"],
-            correctAnswer: "Max Verstappen",
+            question: "Auf was basiert der umweltfreundliche Sprit, welcher die DHL seit 2023 braucht?",
+            options: ["Elektrokraftstoff", "Pflanzenöl", "Algenextrakt", "Tier Kot"],
+            correctAnswer: "Pflanzenöl",
         },
         {
-            question: "Which team has won the most Constructors' Championships?",
-            options: ["Ferrari", "McLaren", "Red Bull Racing", "Mercedes"],
-            correctAnswer: "Ferrari",
+            question: "Wie viel CO₂ konnten die Biofuel-Trucks im Jahr 2023 einsparen?",
+            options: ["65%", "32%", "90%", "83%"],
+            correctAnswer: "83%",
         },
         {
-            question: "What is the longest F1 circuit on the current calendar?",
-            options: ["Silverstone", "Monza", "Spa-Francorchamps", "Circuit de Monaco"],
-            correctAnswer: "Spa-Francorchamps",
+            question: "Welche Massnahme hat 2023 die CO₂-Emissionen der Formel 1 in Europa gesenkt?",
+            options: ["Verwendung von Elektrolastwagen", "Kleinere Motorhomes", "Einsatz von Biofuel in DHL-Trucks", "Weniger Rennen in Europa"],
+            correctAnswer: "Einsatz von Biofuel in DHL-Trucks",
+        },
+        {
+            question: "Wie viel CO₂ stösst die Logistik der Formel 1 aus??",
+            options: ["109'285 Tonnen", "624'488 Tonnen", "254'162 Tonnen", "420'327 Tonnen"],
+            correctAnswer: "109'285 Tonnen",
+        },
+        {
+            question: "Warum tragen die Motorhomes der Formel 1 besonders zur Umweltbelastung bei?",
+            options: ["Sie verbrauchen sehr viel Strom", "Sie werden nur mit Flugzeugen transportiert", "Sie benötigen eine spezielle Klimaanlage", "Sie erfordern zusätzliche Sicherheitsfahrzeuge"],
+            correctAnswer: "Sie verbrauchen sehr viel Strom"
         },
     ];
 
@@ -46,7 +56,7 @@ const Quiz = () => {
     };
 
     const handleChange = (e) => {
-        setAnswers({...answers, [activeStep]: e.target.value});
+        setAnswers({ ...answers, [activeStep]: e.target.value });
     };
 
     const calculateResults = () => {
@@ -61,10 +71,10 @@ const Quiz = () => {
             }
         });
 
-        return {correct, incorrect};
+        return { correct, incorrect };
     };
 
-    const {correct, incorrect} = calculateResults();
+    const { correct, incorrect } = calculateResults();
 
     return (
         <div
@@ -79,56 +89,74 @@ const Quiz = () => {
             }}
         >
             <Typography variant="h4" gutterBottom>
-                Formula 1 Quiz
+                Formel 1 Quiz
             </Typography>
-            <Stepper activeStep={activeStep} alternativeLabel style={{width: "100%"}}>
+            <Stepper
+                activeStep={activeStep}
+                alternativeLabel
+                style={{ width: "100%" }}
+                sx={{
+                    '.MuiStepIcon-root': {
+                        color: "#4b7543",
+                        '&.Mui-completed': { color: "#8d1304" },
+                        '&.Mui-active': { color: "#8d1304" }
+                    }
+                }}
+            >
                 {questions.map((_, index) => (
                     <Step key={index}>
-                        <StepLabel>Question {index + 1}</StepLabel>
+                        <StepLabel>Frage {index + 1}</StepLabel>
                     </Step>
                 ))}
                 <Step>
-                    <StepLabel>Finish</StepLabel>
+                    <StepLabel>Ende</StepLabel>
                 </Step>
             </Stepper>
             {activeStep < questions.length ? (
-                <div style={{margin: "20px 0", width: "100%"}}>
-                    <FormControl component="fieldset" fullwidth>
-                        <FormLabel component="legend">
+                <div style={{ margin: "20px 0", width: "100%" }}>
+                    <FormControl component="fieldset" fullWidth>
+                        <FormLabel
+                            component="legend"
+                            sx={{
+                                padding: '0 20px',
+                                color: '#000', // Textfarbe auf Schwarz setzen
+                                '&.Mui-focused': { color: '#000' }, // Schwarz bleibt auch bei Fokus
+                            }}
+                        >
                             {questions[activeStep].question}
                         </FormLabel>
+
                         <RadioGroup
                             value={answers[activeStep] || ""}
                             onChange={handleChange}
-                            sx={{alignItems: 'center'}}
+                            sx={{ alignItems: 'center', padding: '0 20px' }}
                         >
                             {questions[activeStep].options.map((option, index) => (
                                 <FormControlLabel
                                     key={index}
                                     value={option}
-                                    control={<Radio/>}
+                                    control={<Radio sx={{ color: "#8d1304", '&.Mui-checked': { color: "#4b7543" } }} />}
                                     label={option}
-                                    sx={{width: '200px'}}
+                                    sx={{ width: '100%', '.MuiFormControlLabel-label': { color: 'inherit' } }}
                                 />
                             ))}
                         </RadioGroup>
                     </FormControl>
                 </div>
             ) : (
-                <div style={{marginTop: "20px"}}>
-                    <Typography variant="h5">Quiz Results</Typography>
-                    <Typography variant="body1">Correct Answers: {correct}</Typography>
-                    <Typography variant="body1">Incorrect Answers: {incorrect}</Typography>
+                <div style={{ marginTop: "20px" }}>
+                    <Typography variant="h5">Auswertung</Typography>
+                    <Typography variant="body1">Richtig beantwortet: {correct}</Typography>
+                    <Typography variant="body1">Falsch beantwortet: {incorrect}</Typography>
                 </div>
             )}
-            <div style={{marginTop: "20px"}}>
+            <div style={{ marginTop: "20px" }}>
                 {activeStep !== questions.length &&
                     <Button
                         variant="contained"
-                        color="primary"
+                        style={{ backgroundColor: "#4b7543", color: "#fff", marginRight: "10px" }}
                         disabled={activeStep === 0}
                         onClick={handleBack}
-                        style={{marginRight: "10px"}}
                     >
                         Back
                     </Button>
@@ -136,17 +164,17 @@ const Quiz = () => {
                 {activeStep !== questions.length &&
                     <Button
                         variant="contained"
-                        color="primary"
+                        style={{ backgroundColor: "#8d1304", color: "#fff" }}
                         onClick={handleNext}
                     >
-                        {activeStep === questions.length - 1 ? "Finish" : "Next"}
+                        {activeStep === questions.length - 1 ? "Auswertung" : "Weiter"}
                     </Button>
                 }
                 {activeStep === questions.length &&
                     <Button
                         variant="contained"
-                        color="primary"
-                        href={"/"}
+                        style={{ backgroundColor: "#4b7543", color: "#fff" }}
+                        href={"/details/3"}
                     >
                         Zurück auf die Startseite
                     </Button>
