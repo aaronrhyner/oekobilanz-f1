@@ -84,7 +84,6 @@ const Quiz = () => {
                 flexDirection: "column",
                 justifyContent: "start",
                 alignItems: "center",
-                minHeight: "100vh",
                 textAlign: "center",
             }}
         >
@@ -154,11 +153,11 @@ const Quiz = () => {
                 {activeStep !== questions.length &&
                     <Button
                         variant="contained"
-                        style={{ backgroundColor: "#4b7543", color: "#fff", marginRight: "10px" }}
+                        style={{ backgroundColor: activeStep === 0 ? "grey" : "#4b7543", color: "#fff", marginRight: "10px" }}
                         disabled={activeStep === 0}
                         onClick={handleBack}
                     >
-                        Back
+                        Zurück
                     </Button>
                 }
                 {activeStep !== questions.length &&

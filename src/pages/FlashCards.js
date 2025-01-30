@@ -77,8 +77,8 @@ const FlashCards = ({ question, answer }) => {
 
 const Flashcards = () => {
     const cards = [
-        { question: 'British GP', answer: 'Silverstone ist komplett durch grüne Energie und mithilfe von 2746 Solar Panels betrieben werden.' },
-        { question: 'Bahrain GP', answer: 'Seit 2024 nur mit Solarstrom betrieben. Zusätzlich über 100000 Petflaschen eingespart durch Auffüllstationen für Wasser' },
+        { question: 'British GP', answer: 'Silverstone ist komplett durch grüne Energie und mithilfe von 2746 Solar Panels betrieben worden.' },
+        { question: 'Bahrain GP', answer: 'Seit 2024 nur mit Solarstrom betrieben. Zusätzlich über 100000 Petflaschen eingespart durch Auffüllstationen für Wasser.' },
         { question: 'Singapur GP', answer: 'Will ab dem Jahr 2025 in 50% der Generatoren grüner Sprit brauchen. Bis 2028 wollen sie 100% grüner Sprit verwenden.' },
     ];
 
