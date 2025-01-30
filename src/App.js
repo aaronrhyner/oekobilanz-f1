@@ -48,13 +48,15 @@ const styles = {
     },
 
     menu: {
+        zIndex: 100,
         position: 'absolute',
         left: '0',
         width: '100%',
         backgroundColor: '#FF1e00',
         color: 'white',
         boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.2)',
-        padding: '20px',
+        paddingTop: '30px',
+        paddingBottom: '30px',
         textAlign: 'left',
         overflowX: 'hidden',
         overflowY: 'auto',

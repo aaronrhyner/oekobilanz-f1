@@ -49,7 +49,7 @@ const LogisticsPage = () => {
                         flexGrow: 1,
                     }}
                 >
-                    Logistiik
+                    Logistik
                 </Typography>
             </div>
 
@@ -57,7 +57,7 @@ const LogisticsPage = () => {
                 <CardContent>
                     <Typography variant="body1" style={{lineHeight: 1.8, color: "#555"}}>
                         Die Logistik macht etwas weniger als die Hälfte des gesamten CO₂-Ausstosses der Formel 1 aus, in
-                        Zahlen sind das <strong>109.285,2 Tonnen CO₂</strong>.
+                        Zahlen sind das <strong>109'285.2 Tonnen CO₂</strong>.
                     </Typography>
                     <div style={{display: "flex", gap: "24px", marginTop: "24px", justifyContent: "center"}}>
                         <Tooltip

@@ -1,5 +1,5 @@
 import React from "react";
-import {Card, CardContent, Typography, Button} from "@mui/material";
+import {Button, Card, CardContent, Typography} from "@mui/material";
 import FlashCards from "./FlashCards";
 import {useNavigate} from "react-router-dom";
 
@@ -59,7 +59,7 @@ const Streckenbetrieb = () => {
             >
                 <CardContent>
                     <Typography variant="body1" style={{lineHeight: 1.8, color: "#555"}}>
-                        Im Durchschnitt kommen an ein Rennwochenende <strong>268'465 Zuschauer </strong> die
+                        Im Durchschnitt kommen an ein Rennwochenende <strong>268'465 Zuschauer</strong> die
                         Königsklasse des
                         Motorsports Live zu erleben. Um diese tausende von Zuschauern Versorgen zu können braucht es
                         unmengen an Infrastruktur wie Tribünen, Transportmöglichkeiten, Toiletten, Versorgung und
@@ -116,7 +116,6 @@ const Streckenbetrieb = () => {
                         wie Solarpanels, Batteriespeichersysteme, Biokraftstoffe und hydriertes Pflanzenöl.
                         Aufgrund dieses Systems müssen die Teams und die Rennleitung keine eigenen Generatoren
                         mitbringen sondern die ganze Strecke hat ein Einheitliches System.
-
                     </Typography>
                     <Typography variant="body1" style={{lineHeight: 1.8, color: "#555"}}>
                         2023 wurden in Österreich erstmals Tests mit diesem System gemacht und es konnten über 90% der

@@ -3,7 +3,7 @@ import {useNavigate} from "react-router-dom";
 import ModelComponent from "../components/ModelComponent";
 import textsData from "../data/text.json";
 import Footer from "../components/Footer";
-import {Button, Box, Typography} from "@mui/material";
+import {Box, Button, Typography} from "@mui/material";
 
 const Home = () => {
     const navigate = useNavigate();
@@ -29,19 +29,19 @@ const Home = () => {
                         Gesamthaft wurden in der 2023 Saison der Formel 1 <strong>223'031 Tonnen</strong> Co2 in die
                         Atmosphäre ausgestossen.
                         <li>
-                           <strong> 109'285.2 Tonnen</strong> Co2 stammen von der Logistik der Formel 1.
+                            <strong>109'285.2 Tonnen</strong> Co2 stammen von der Logistik der Formel 1.
                         </li>
                         <li>
-                            <strong>64'678,99 Tonnen </strong>Co2 stammen von den Reisen der Mitarbeitern.
+                            <strong>64'678.99 Tonnen</strong> Co2 stammen von den Reisen der Mitarbeitern.
                         </li>
                         <li>
-                            <strong>26'763,72 Tonnen </strong>Co2 werden durch den Streckenbetrieb freigesetzt.
+                            <strong>26'763.72 Tonnen</strong> Co2 werden durch den Streckenbetrieb freigesetzt.
                         </li>
                         <li>
-                            <strong> 22'303,1 Tonnen </strong>Co2 kommen von den Werken und Büros der Formel 1 Teams.
+                            <strong> 22'303.1 Tonnen</strong> Co2 kommen von den Werken und Büros der Formel 1 Teams.
                         </li>
                         <li>
-                            <strong> 1.99 Tonnen </strong>Co2 stammen effektiv von den Rennautos.
+                            <strong> 1.99 Tonnen</strong> Co2 stammen effektiv von den Rennautos.
                         </li>
 
                     </Typography>
@@ -71,15 +71,16 @@ const Home = () => {
                             </Button>
                         </Box>
                         <Typography variant="h6" style={styles.quote}>
-                        {text.quote}
-                    </Typography>
+                            {text.quote}
+                        </Typography>
                     </React.Fragment>
                 ))}
                 {/* Additional quotes added throughout the page */}
             </div>
-            <footer>
+            <div style={{ width: "80%", height: "1px", backgroundColor: "black", margin: "20px 0" }}></div>
+            <div style={{width: '100%'}}>
                 <Footer/>
-            </footer>
+            </div>
         </div>
     );
 };
@@ -89,7 +90,6 @@ const styles = {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        height: "100vh",
         backgroundColor: "#f0f4f8",
         fontFamily: '"Segoe UI", Tahoma, Geneva, Verdana, sans-serif',
         color: "#333",
@@ -126,6 +126,9 @@ const styles = {
     textContainer: {
         width: "80%",
         marginTop: "20px",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
     },
     shortText: {
         marginBottom: "20px",
@@ -174,11 +177,13 @@ const styles = {
         textTransform: "none",
     },
     quote: {
-        border: "1px solid #202020" ,
         textAlign: "center",
         fontStyle: "italic",
         margin: "20px 0",
         color: "#555",
+        marginTop: '0px',
+        marginBottom: '50px',
+        width: '70%'
     },
 };
 
