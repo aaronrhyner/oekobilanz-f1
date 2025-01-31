@@ -173,7 +173,7 @@ const Quiz = () => {
                     <Button
                         variant="contained"
                         style={{ backgroundColor: "#4b7543", color: "#fff" }}
-                        href={"/details/3"}
+                        href={"/"}
                     >
                         Zurück auf die Startseite
                     </Button>
