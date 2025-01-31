@@ -1,17 +1,10 @@
 import React from "react";
-import {useNavigate} from "react-router-dom";
 import ModelComponent from "../components/ModelComponent";
 import textsData from "../data/text.json";
 import Footer from "../components/Footer";
 import {Box, Button, Typography} from "@mui/material";
 
 const Home = () => {
-    const navigate = useNavigate();
-
-    const handleReadMore = (id) => {
-        navigate(`/details/${id}`);
-    };
-
     return (
         <div style={{...styles.container}}>
             <header style={styles.header}>
@@ -65,7 +58,7 @@ const Home = () => {
                                 variant="contained"
                                 color="primary"
                                 style={styles.button}
-                                onClick={() => handleReadMore(text.id)}
+                                href={`/details/${text.id}`}
                             >
                                 ➔
                             </Button>
