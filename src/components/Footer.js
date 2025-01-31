@@ -3,7 +3,7 @@ import { Link, Typography, Box } from '@mui/material';
 
 const Footer = () => {
     return (
-        <Box sx={{ padding: '20px', textAlign: 'center', marginTop: 'auto', width: '100%' }}>
+        <Box sx={{ textAlign: 'center', marginTop: '20px', marginBottom: '40px', width: '100%' }}>
             <Typography variant="body1" sx={{ marginBottom: '10px' }}>
                 Diese Webseite wurde im Rahmen einer Berufsmaturitätsarbeit von Jonas Züst, Aaron Rhyner und Eleni Müller geschrieben.
             </Typography>

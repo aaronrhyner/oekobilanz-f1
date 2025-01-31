@@ -118,7 +118,7 @@ const ModelComponent = () => {
                             fontWeight: 'bold'
                         }}
                     >
-                        Close
+                        Schliessen
                     </Button> </DialogActions>
             </Dialog>
         </div>
